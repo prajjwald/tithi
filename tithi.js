@@ -23,7 +23,7 @@ var tithis = {
 };
 
 function loadcsv() {
-    Papa.parse("/tithi.csv", {
+    Papa.parse("tithi.csv", {
 	download: true,
 	step: function(row) {
 		// console.log("Row:", row.data);
