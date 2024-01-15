@@ -1,0 +1,59 @@
+<title>Tithi Calculator (Pre-Alpha)</title>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="papaparse.min.js"></script>
+  <script src="tithi.js" defer></script>
+  <style>
+    .light-mode {
+      background-color: white;
+      color: black;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="color: red" ;><b>Warning:</b>pre-alpha software.
+  </div>
+  <details>
+    <summary>
+      Expand for details/background
+    </summary>
+    Intended to be fully free to use (GPL) when I make this a bit more mature. Right now - I just need to let my friends
+    take a peek.
+    This calculator should give you accurate tithis within a day.
+    <br><br>
+    State of affairs:
+    <ul>
+      <li>I'm not very familiar with astronomical concepts (the data in this calculator was derived by me crudely
+        dabbling with
+        skyfield</li>
+      <li>I've mostly never done HTML or any serious frontend programming in my life. I hope it shows :)</li>
+      <li>We'll see how far this goes. I'd love to have an <a href="https://f-droid.org/">FDroid</a> app, a KDE Widget,
+        a Gnome Widget, a PWA, not necessarily in that order.</li>
+    </ul>
+    <b>Libraries Used</b>
+    <ul>
+      <li><a href="https://rhodesmill.org/skyfield/">skyfield</a> python library for doing astronomical calculations
+      </li>
+      <li><a href="https://www.papaparse.com/">PapaParse Javascript Library</a> for parsing csv files</li>
+      <li><a href="https://github.com/flatpickr/flatpickr">Flatpickr Javascript Library</a> for picking dates nicely
+      </li>
+    </ul>
+  </details>
+  <h1>Tithi Calculator</h1>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button><br>
+  <label>Date: </label>
+  <input id="datepicker" type="text" onchange="dateChange()">
+  <!-- Format ref: https://flatpickr.js.org/formatting/ -->
+  <script>flatpickr("#datepicker", { inline: false, dateFormat: "Y-m-d" });</script>
+  <br>
+  <label><B>Tithi:</B></label>
+  <label id="tithi">Please select a date</label>
+</body>
